@@ -140,6 +140,15 @@ Frontend/
 - [x] Responsive design
 - [x] Theme support
 
+## 👥 Our Team
+
+This project was built as part of the IBM SkillsBuild AI-ML Internship by **Team Code Push Pray**.
+
+| Name                 | Role                    | GitHub Profile                              | LinkedIn Profile                                                   |
+| -------------------- | ----------------------- | ------------------------------------------- | ------------------------------------------------------------------ |
+| **Rachit Neema**    | Team Lead   | [GitHub](https://github.com/Rachitneema03)       |
+| **Rajat Tatware** | Co-Lead      | [GitHub]([https://github.com/Shatakshi0216](http://github.com/rajat-tatware))         |
+
 ## Printing Instructions
 
 1. **Main Files**: Print index.html, styles.css, script.js
