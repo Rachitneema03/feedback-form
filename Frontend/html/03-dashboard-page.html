@@ -1,0 +1,64 @@
+<!-- 
+    ============================================
+    DASHBOARD PAGE SECTION
+    ============================================
+    Description: Main dashboard after user login
+    Features:
+    - Dashboard header with logo and navigation
+    - Feedback forms grid
+    - Feedback history section
+    - User profile and settings access
+    ============================================
+-->
+
+<!-- DASHBOARD PAGE -->
+<div id="dashboard-page" class="page">
+    <!-- Dashboard Header -->
+    <header class="dashboard-header">
+        <div class="dashboard-header-container">
+            <h1 class="dashboard-title">
+                <img src="images/iips_davv_logo.jpeg" alt="IIPS DAVV Logo" class="dashboard-logo">
+                FeedbackHub
+            </h1>
+            <div class="dashboard-header-actions">
+                <button class="btn btn-profile" onclick="openProfileModal()">
+                    <i class="bi bi-person-circle"></i>
+                    My Profile
+                </button>
+                <button class="btn btn-settings" onclick="openSettingsModal()">
+                    <i class="bi bi-gear"></i>
+                    Settings
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Dashboard Main Content -->
+    <main class="dashboard-main">
+        <!-- FEEDBACK FORMS SECTION -->
+        <div class="feedback-forms-section">
+            <h2 class="section-title">
+                <i class="bi bi-clipboard-data"></i>
+                Available Feedback Forms
+            </h2>
+            <div id="feedback-forms-grid" class="feedback-forms-grid">
+                <!-- Feedback form cards will be generated dynamically by JavaScript -->
+            </div>
+        </div>
+
+        <!-- FEEDBACK HISTORY SECTION -->
+        <div class="feedback-history-section">
+            <h2 class="section-title">
+                <i class="bi bi-clock-history"></i>
+                Your Feedback History
+            </h2>
+            <div id="feedback-history" class="feedback-list">
+                <p class="empty-state">
+                    <i class="bi bi-inbox"></i>
+                    No feedback submitted yet. Be the first to share your thoughts!
+                </p>
+            </div>
+        </div>
+    </main>
+</div>
+

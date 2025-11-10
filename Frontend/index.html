@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FeedbackHub - College Feedback System</title>
+    
+    <!-- External Dependencies -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- 
+        ============================================
+        FEEDBACKHUB - COLLEGE FEEDBACK SYSTEM
+        ============================================
+        Project Structure:
+        - Landing Page: Initial welcome page
+        - Authentication Page: User login/signup
+        - Dashboard Page: Main application interface
+        - Modals: Various popup dialogs
+        
+        Files Organization:
+        - html/01-landing-page.html: Landing page section
+        - html/02-auth-page.html: Authentication section
+        - html/03-dashboard-page.html: Dashboard section
+        - html/04-modals.html: All modal dialogs
+        - styles.css: All CSS styles
+        - script.js: All JavaScript functionality
+        ============================================
+    -->
+
     <!-- LANDING PAGE -->
     <div id="landing-page" class="page active">
         <header class="fixed-header">
@@ -108,7 +132,7 @@
         <header class="dashboard-header">
             <div class="dashboard-header-container">
                 <h1 class="dashboard-title">
-                    <i class="bi bi-chat-square-heart"></i>
+                    <img src="images/iips_davv_logo.jpeg" alt="IIPS DAVV Logo" class="dashboard-logo">
                     FeedbackHub
                 </h1>
                 <div class="dashboard-header-actions">
@@ -125,18 +149,16 @@
         </header>
 
         <main class="dashboard-main">
-            <!-- FEEDBACK FORMS SECTION -->
             <div class="feedback-forms-section">
                 <h2 class="section-title">
                     <i class="bi bi-clipboard-data"></i>
                     Available Feedback Forms
                 </h2>
                 <div id="feedback-forms-grid" class="feedback-forms-grid">
-                    <!-- 20 Feedback form cards will be generated here -->
+                    <!-- Feedback form cards will be generated dynamically -->
                 </div>
             </div>
 
-            <!-- FEEDBACK HISTORY SECTION -->
             <div class="feedback-history-section">
                 <h2 class="section-title">
                     <i class="bi bi-clock-history"></i>
@@ -378,6 +400,7 @@
         </div>
     </div>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>

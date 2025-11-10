@@ -139,16 +139,25 @@ a { color: var(--accent-color); }
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f7f9fc 0%, #eef3f9 100%);
-    background-image: radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.03) 0%, transparent 50%);
+    background-image: url('images/davv_gate.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     padding-top: 80px;
     transition: var(--transition);
 }
 
-body.dark-theme .hero-section {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    background-image: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(247, 249, 252, 0.85) 0%, rgba(238, 243, 249, 0.75) 100%);
+    z-index: 0;
+}
+
+body.dark-theme .hero-section::after {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.85) 0%, rgba(22, 33, 62, 0.75) 100%);
 }
 
 .hero-section::before {
@@ -156,13 +165,14 @@ body.dark-theme .hero-section {
     position: absolute;
     inset: 0;
     background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="1" fill="rgba(0,0,0,0.06)"/></svg>');
-    opacity: 0.3;
+    opacity: 0.15;
     animation: float 20s infinite ease-in-out;
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     text-align: center;
     padding: 2rem;
     max-width: 800px;
@@ -525,6 +535,12 @@ body.dark-theme .form-group select:focus {
 
 .dashboard-title i {
     color: var(--accent-color);
+}
+
+.dashboard-logo {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
 }
 
 .dashboard-main {
@@ -1163,6 +1179,7 @@ body.dark-theme .settings-option:hover {
     .dashboard-header-actions { width: 100%; flex-direction: column; }
     .dashboard-header-actions .btn { width: 100%; }
     .dashboard-title { font-size: 1.5rem; }
+    .dashboard-logo { height: 35px; }
     .auth-card { padding: 2rem; }
     .header-container { padding: 0 1rem; }
     .dashboard-main { padding: 1rem; }
@@ -1176,4 +1193,5 @@ body.dark-theme .settings-option:hover {
     .auth-card { padding: 1.5rem; }
     .card { padding: 1.5rem; }
     .feedback-item { padding: 1rem; }
+    .dashboard-logo { height: 30px; }
 }

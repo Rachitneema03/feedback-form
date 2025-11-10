@@ -1,0 +1,242 @@
+<!-- 
+    ============================================
+    MODALS SECTION
+    ============================================
+    Description: All modal dialogs used in the application
+    Features:
+    - Feedback form modal
+    - Profile modal
+    - Settings modal
+    - Appearance/Theme modal
+    - Delete account confirmation modal
+    ============================================
+-->
+
+<!-- FEEDBACK FORM MODAL -->
+<div id="feedback-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modal-title">
+                <i id="modal-icon"></i>
+                <span id="modal-title-text">Feedback Form</span>
+            </h2>
+            <button class="modal-close" onclick="closeModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <form id="feedback-form" onsubmit="handleFeedbackSubmit(event)">
+            <input type="hidden" id="feedback-form-id" name="formId">
+            <input type="hidden" id="feedback-form-type" name="formType">
+            
+            <div id="modal-form-content">
+                <!-- Dynamic form content will be inserted here by JavaScript -->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-send"></i>
+                    Submit Feedback
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- PROFILE MODAL -->
+<div id="profile-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <i class="bi bi-person-circle"></i>
+                My Profile
+            </h2>
+            <button class="modal-close" onclick="closeProfileModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="profile-content">
+            <div class="profile-avatar">
+                <i class="bi bi-person-circle"></i>
+            </div>
+            <div class="profile-info">
+                <div class="profile-info-item">
+                    <span class="profile-label">
+                        <i class="bi bi-person"></i>
+                        Full Name
+                    </span>
+                    <span class="profile-value" id="profile-name">-</span>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile-label">
+                        <i class="bi bi-envelope"></i>
+                        Email Address
+                    </span>
+                    <span class="profile-value" id="profile-email">-</span>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile-label">
+                        <i class="bi bi-clipboard-check"></i>
+                        Total Feedback Submitted
+                    </span>
+                    <span class="profile-value" id="profile-feedback-count">0</span>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile-label">
+                        <i class="bi bi-calendar-event"></i>
+                        Member Since
+                    </span>
+                    <span class="profile-value" id="profile-member-since">-</span>
+                </div>
+                <div class="profile-info-item">
+                    <span class="profile-label">
+                        <i class="bi bi-shield-check"></i>
+                        Account Status
+                    </span>
+                    <span class="profile-value profile-status">
+                        <i class="bi bi-check-circle"></i>
+                        Active
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" onclick="closeProfileModal()">
+                <i class="bi bi-check-lg"></i>
+                Close
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- SETTINGS MODAL -->
+<div id="settings-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <i class="bi bi-gear"></i>
+                Settings
+            </h2>
+            <button class="modal-close" onclick="closeSettingsModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="settings-content">
+            <!-- Appearance Section -->
+            <div class="settings-section">
+                <h3 class="settings-section-title">
+                    <i class="bi bi-palette"></i>
+                    Appearance
+                </h3>
+                <div class="settings-option" onclick="openAppearanceModal()">
+                    <div class="settings-option-content">
+                        <i class="bi bi-paint-bucket"></i>
+                        <div class="settings-option-text">
+                            <span class="settings-option-title">Change Appearance</span>
+                            <span class="settings-option-description">Customize theme and colors</span>
+                        </div>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+            </div>
+
+            <!-- Account Section -->
+            <div class="settings-section">
+                <h3 class="settings-section-title">
+                    <i class="bi bi-shield-exclamation"></i>
+                    Account
+                </h3>
+                <div class="settings-option" onclick="handleLogout()">
+                    <div class="settings-option-content">
+                        <i class="bi bi-box-arrow-right"></i>
+                        <div class="settings-option-text">
+                            <span class="settings-option-title">Log Out</span>
+                            <span class="settings-option-description">Sign out from your account</span>
+                        </div>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+                <div class="settings-option settings-option-danger" onclick="openDeleteAccountModal()">
+                    <div class="settings-option-content">
+                        <i class="bi bi-trash"></i>
+                        <div class="settings-option-text">
+                            <span class="settings-option-title">Delete Account</span>
+                            <span class="settings-option-description">Permanently delete your account</span>
+                        </div>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- APPEARANCE MODAL -->
+<div id="appearance-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <i class="bi bi-palette"></i>
+                Change Appearance
+            </h2>
+            <button class="modal-close" onclick="closeAppearanceModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="appearance-content">
+            <div class="appearance-option">
+                <div class="appearance-preview" data-theme="light">
+                    <div class="preview-box light-preview"></div>
+                    <span>Light Theme</span>
+                </div>
+                <div class="appearance-preview" data-theme="dark">
+                    <div class="preview-box dark-preview"></div>
+                    <span>Dark Theme</span>
+                </div>
+            </div>
+            <p class="appearance-note">
+                <i class="bi bi-info-circle"></i>
+                Theme changes will be applied immediately
+            </p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeAppearanceModal()">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<!-- DELETE ACCOUNT MODAL -->
+<div id="delete-account-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <i class="bi bi-exclamation-triangle"></i>
+                Delete Account
+            </h2>
+            <button class="modal-close" onclick="closeDeleteAccountModal()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <div class="delete-account-content">
+            <div class="delete-account-warning">
+                <i class="bi bi-exclamation-triangle"></i>
+                <h3>Are you sure you want to delete your account?</h3>
+                <p>This action cannot be undone. All your data, including feedback submissions, will be permanently deleted.</p>
+            </div>
+            <div class="delete-account-confirm">
+                <label class="confirm-checkbox">
+                    <input type="checkbox" id="confirm-delete">
+                    <span>I understand this action is permanent and cannot be undone</span>
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" onclick="closeDeleteAccountModal()">Cancel</button>
+            <button type="button" class="btn btn-danger" id="delete-account-btn" onclick="handleDeleteAccount()" disabled>
+                <i class="bi bi-trash"></i>
+                Delete Account
+            </button>
+        </div>
+    </div>
+</div>
+
