@@ -1,6 +1,5 @@
 # feedback-form
 
-## Quick Reference for Hard Copy Submission
 
 ### File Organization
 
@@ -24,20 +23,7 @@ Frontend/
     └── iips_davv_logo.jpeg
 ```
 
-## Files to Submit
 
-### Main Files (Required)
-1. **index.html** - Main application file
-2. **styles.css** - All styling (single file)
-3. **script.js** - All functionality (single file)
-4. **README.md** - Complete documentation
-
-### Reference Files (Optional)
-- **html/** folder - Separated HTML components for reference
-- **PROJECT_STRUCTURE.md** - This quick reference guide
-
-### Assets
-- **images/** folder - All image assets
 
 ## Code Organization
 
